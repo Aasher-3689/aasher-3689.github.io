@@ -5,6 +5,17 @@ window.addEventListener("load", () => {
 loader.style.display = "none";
 });
 
+// fixed header style chane on scroll
+
+const headerMain = document.querySelector(".header-main-bg");
+window.addEventListener("scroll", () => {
+    if (scrollY >= 60) {
+        headerMain.classList.add("header-main-bg-2");
+    } else {
+        headerMain.classList.remove("header-main-bg-2");
+    }
+});
+
 // scroll back to top
 
 const backToTop = document.querySelector(".back-to-top");
@@ -21,18 +32,6 @@ window.addEventListener("scroll", () => {
     }
 });
 
-// justifying content center when stick at top for "category bar"
-
-const categoryBar = document.querySelector(".main-top");
-window.addEventListener("scroll", () => {
-    const topHeightRemains = categoryBar.getBoundingClientRect();
-    if (topHeightRemains.top <= 60) {
-        categoryBar.classList.add("main-top-center");
-    } else {
-        categoryBar.classList.remove("main-top-center");
-    }
-})
-
 // showing vertical nav on menu-button
 
 const menuButton = document.querySelector(".menu-button");
@@ -45,25 +44,3 @@ menuButton.addEventListener("click", () => {
         menuButton.style.transform = "";
     }
 });
-
-// replacing category bar with search input on searck button
-// and replacing search input back with category bar on category button
-
-const currentCategoryBarHtml = categoryBar.innerHTML;
-
-const updatedCategoyBarHtml = `<input class="in-search-articles bt-c" type="search" name="in-search-articles"  placeholder="Search articles" spellcheck="false" required>
-                               <button class="in-search-articles-bt" title="Search Input"><img src="./assets/images/search-icon-two.svg" alt="search"></button>
-                               <button class="back-to-category-bt" title="Back to Category Bar" onclick="backToCategoryBar()"><img src="./assets/images/category-icon.svg" alt="back-to-category"></button>`;
-
-function changeCategoryBar() {
-    categoryBar.innerHTML = updatedCategoyBarHtml;
-    categoryBar.style.justifyContent = "center";
-    categoryBar.style.columnGap = "16px";
-    document.querySelector(".in-search-articles").focus();
-}
-
-function backToCategoryBar() {
-    categoryBar.innerHTML = currentCategoryBarHtml;
-    categoryBar.style.justifyContent = "";
-    categoryBar.style.columnGap = "";
-}
