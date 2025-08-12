@@ -124,8 +124,9 @@ nav {
     font-family: "2", "1"; font-weight: 300;
   }
   a {
-    background-color: #FFFF00;
-    color: #141414;
+    background-color: #2e6f40;
+    color: #FDFBD4;
+    box-shadow: 0 0 1rem rgba(36, 36, 35, 0.3);
     width: fit-content;
     padding: 12px 16px;
     letter-spacing: 1px;
@@ -134,7 +135,7 @@ nav {
     transition: opacity 0.3s ease-in-out;
   }
   a:hover {
-    opacity: 0.8;
+    opacity: 0.9;
     
   }
 }
@@ -150,7 +151,7 @@ nav {
   min-height: 250px; max-height: 250px;
   background-color: #f4f4f4;
   border-radius: 50%;
-  outline: 6px solid #FFFF00;
+  outline: 6px solid #FDFBD4;
   filter: drop-shadow(0 0 8px #141414);
   transform: translateY(-50%);
   img {
