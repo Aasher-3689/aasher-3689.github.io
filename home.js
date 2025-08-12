@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
 loader.style.display = "none";
 });
 
-// fixed header style chane on scroll
+// fixed header bg change on scroll
 
 const headerMain = document.querySelector(".header-main-bg");
 window.addEventListener("scroll", () => {

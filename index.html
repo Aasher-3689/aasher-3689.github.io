@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>azadware - aasher</title>
-  <link rel="icon" href="./assets/images/azadware-logo-36.png">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Muhammad Aasher">
-  <meta name="description" content="azadware. Muhammad Aasher's portfolio, Projects, and Articles/Blogs - Aasher-3689. Aasher is a computer science student from Layyah, Punjab, Pakistan">
-  <link rel="stylesheet" href="./home.css">
-  <meta name="google-site-verification" content="-b9hRm310gN14hc0LKdQIxPT7Sksw8SDUZYG5Llr_-U" />
 
-  
+  <title>Azadware &ndash; Projects & Articles by Aasher</title>
+  <meta property="og:title" content="Azadware &ndash; Projects & Articles by Aasher">
+  <meta name="twitter:title" content="Azadware &ndash; Projects & Articles by Aasher">
+  <meta name="author" content="Muhammad Aasher - (azadware)">
+  <meta property="og:description" content="Visit Azadware for trusted articles on computing, technology, science, travel, lifestyle, photography, literature and much more, along with personal projects.">
+  <meta name="twitter:description" content="Visit Azadware for trusted articles on computing, technology, science, travel, lifestyle, photography, literature and much more, along with personal projects.">
+
+  <link rel="icon" href="./assets/azadware-icons/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="./assets/azadware-icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/azadware-icons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/azadware-icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="./assets/azadware-icons/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./assets/azadware-icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="144x144" href="./assets/azadware-icons/favicon-144x144.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/azadware-icons/favicon-180x180.png">
+
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="canonical" href="https://aasher-3689.github.io/">
+
+  <link rel="preload" href="./assets/fonts/croissant-one.ttf" as="font" type="font/ttf">
+  <link rel="preload" href="./assets/fonts/inter.ttf" as="font" type="font/ttf">
+  <link rel="preload" href="./assets/fonts/roboto.ttf" as="font" type="font/ttf">
+  <link rel="preload" href="./assets/fonts/noto-serif.ttf" as="font" type="font/ttf">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aasher-3689.github.io/">
+  <meta property="og:site_name" content="azadware">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://aasher-3689.github.io/assets/azadware-icons/og-image.png">
+  <meta name="twitter:image" content="https://aasher-3689.github.io/assets/azadware-icons/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="./home.css">
+
+  <!--google search console meta tag-->
+  <meta name="google-site-verification" content="-b9hRm310gN14hc0LKdQIxPT7Sksw8SDUZYG5Llr_-U" />  
 
 </head>
 <body>
@@ -40,7 +70,7 @@
     
     <div class="header-desc-bg">
       <div class="header-desc">
-        <h1>Aasher (azadware) on Computing, Philosophy and more...</h1>
+        <h1 class="header-desc-h1">Aasher (azadware) on Computing, Philosophy and more...</h1>
         <a href="#about">Read More About Me</a>
       </div>
     </div>
@@ -62,19 +92,41 @@
       <div class="main-top">
         <div class="search-articles-outer">
           <input class="in-search-articles" type="search" name="in-search-articles"  placeholder="Search articles" spellcheck="false" required>
-          <button class="in-search-articles-bt" title="Search Input"><img src="./assets/images/search-icon.svg" alt="search"></button>
+          <button class="in-search-articles-bt" title="Search Input"><img src="./assets/images/search-icon.svg" alt="search" onclick="seeSearchResults()"></button>
+
+          <script>
+            function seeSearchResults() {
+              if (document.querySelector(".in-search-articles").value.trim() !== "") {
+                document.getElementById("my-articles").scrollIntoView();
+                document.querySelector(".in-search-articles").blur();
+              }
+            }
+
+            document.querySelector(".in-search-articles").addEventListener("keydown", (event) => {
+              if (event.key === "Enter") {seeSearchResults();}
+            });
+          </script>
+
         </div>
 
         <button class="filter-articles-bt" title="Filter articles"><img src="./assets/images/category-icon.svg" alt="Filter articles">
           <div class="category-outer">
-            <div class="category-words-title"><img src="./assets/images/category-icon-2.svg"> Filter articles</div>
-            <hr>
+            <div class="category-words-title"><img src="./assets/images/sort-icon.svg"> Sort</div>
             <div class="category-words-outer">
-              <div class="category-word">Computing</div>
-              <div class="category-word">Philosophy</div>
-              <div class="category-word">Electronic</div>
-              <div class="category-word">Python</div>
-              <div class="category-word">Frontend</div>
+              <div class="category-word category-word-sort active-category-button">Latest</div>
+              <div class="category-word category-word-sort">Oldest</div>
+            </div>
+            
+            <div class="category-words-title"><img src="./assets/images/category-icon-2.svg"> Category</div>
+            <div class="category-words-outer">
+              <div class="category-word category-word-category active-category-button">All</div>
+              <div class="category-word category-word-category">Technology</div>
+              <div class="category-word category-word-category">Computing</div>
+              <div class="category-word category-word-category">Science</div>
+              <div class="category-word category-word-category">Travel</div>
+              <div class="category-word category-word-category">Lifestyle</div>
+              <div class="category-word category-word-category">Photography</div>
+              <div class="category-word category-word-category">Literature</div>
             </div>
           </div>
         </button>
@@ -85,88 +137,174 @@
       <div class="main-articles">
         <div class="articles-outer-div">
 
-            <div class="article-self-div">
+          <div class="article-not-found"></div>
+
+          <!-- ========== Article Self Div Template ============= >
+
+            <div class="article-self-div" data-id="1" data-category="1,2,3">
               <div class="article-self-div-top">
                 <div class="article-self-div-tags">
-                  <div>computing</div><div>python</div><div>frontend</div>
+                  <div>1</div><div>2</div><div>3</div>
                 </div>
                 <div class="article-self-div-date">
-                  <img src="./assets/images/calendar-icon.svg"><div>06 Aug 2025</div>
+                  <img src="./assets/images/calendar-icon.svg"><div>date(n) Month(a) Year(n)</div>
                 </div>
               </div>
               <div class="article-self-div-bottom">
-                <h2 class="article-self-div-title">Testing title place</h2>
-                <p class="article-self-div-desc">
-                  Testing description. A small portion of post will appear in this place of some words. It will not be a complete post. For complete post, you have to click button below. A small portion of post will appear in this place of some words. It will not be a complete post. For complete post, you have to click button below...
-                </p>
+                <h2 class="article-self-div-title">Title</h2>
+                <p class="article-self-div-desc">Desc</p>
                 <a href="#">Read Article</a>
               </div>
+              <div style="display: none;" class="article-self-div-keywords">python, tech, photes, culture</div>
             </div>
+          -->
+
+          <div class="article-self-div" data-id="4" data-category="technology,computing">
+            <div class="article-self-div-top">
+              <div class="article-self-div-tags">
+                <div>technology</div><div>computing</div>
+              </div>
+              <div class="article-self-div-date">
+                <img src="./assets/images/calendar-icon.svg"><div>01 Feb 2026</div>
+              </div>
+            </div>
+            <div class="article-self-div-bottom">
+              <h2 class="article-self-div-title">Wanna explore python programming tutorial with me. You are at the right place (Testing Title)</h2>
+              <p class="article-self-div-desc">A small portion of post will appear in this place of some words. It will not be a complete post. For complete post, you have to click button below.A small portion of post will appear in this place of some words. It will not be a complete post. For complete post, you have to click button below...</p>
+              <a href="./a/articles.html">Read Article</a>
+            </div>
+            <div style="display: none;" class="article-self-div-keywords">python, coding</div>
+          </div>
+
+
+
+          <div class="article-self-div" data-id="3" data-category="computing,technology">
+            <div class="article-self-div-top">
+              <div class="article-self-div-tags">
+                <div>computing</div><div>technology</div>
+              </div>
+              <div class="article-self-div-date">
+                <img src="./assets/images/calendar-icon.svg"><div>29 Oct 2025</div>
+              </div>
+            </div>
+            <div class="article-self-div-bottom">
+              <h2 class="article-self-div-title">Let's explore some technology and computing with me. Title is being tested</h2>
+              <p class="article-self-div-desc">A small portion of post will appear in this place of some words. It will not be a complete post. For complete post, you have to click button below.A small portion of post will appear in this place of some words. It will not be a complete post. For complete post, you have to click button below...</p>
+              <a href="./a/articles.html">Read Article</a>
+            </div>
+            <div style="display: none;" class="article-self-div-keywords">python, tech, java</div>
+          </div>
+
+
+
+
+          <div class="article-self-div" data-id="2" data-category="travel,photography">
+            <div class="article-self-div-top">
+              <div class="article-self-div-tags">
+                <div>travel</div><div>photography</div>
+              </div>
+              <div class="article-self-div-date">
+                <img src="./assets/images/calendar-icon.svg"><div>15 Sept 2025</div>
+              </div>
+            </div>
+            <div class="article-self-div-bottom">
+              <h2 class="article-self-div-title">Testing title for this article having tags travel and photgraphy</h2>
+              <p class="article-self-div-desc">Testing this place for this article having tags travel and photgraphy. This is a description place testing. A small portion of post will appear in this place of some words. It will not be a complete post. For complete post, you have to click button below. Testing this place for this article having tags travel and photgraphy. This is a description place testing...</p>
+              <a href="./a/articles.html">Read Article</a>
+            </div>
+            <div style="display: none;" class="article-self-div-keywords">photoes, travelling, culture</div>
+          </div>
+
+
+
+
+          <div class="article-self-div" data-id="1" data-category="lifestyle,literature,photography">
+            <div class="article-self-div-top">
+              <div class="article-self-div-tags">
+                <div>lifestyle</div><div>literature</div><div>photography</div>
+              </div>
+              <div class="article-self-div-date">
+                <img src="./assets/images/calendar-icon.svg"><div>10 Aug 2025</div>
+              </div>
+            </div>
+            <div class="article-self-div-bottom">
+              <h2 class="article-self-div-title">Here goes lifestyle, literature and photography (testing title)</h2>
+              <p class="article-self-div-desc">Here goes the some lines of article for lifestyle, literature and photography testing description. Here goes the some lines of article for lifestyle, literature and photography testing description. A small portion of post will appear in this place of some words. It will not be a complete post. For complete post, you have to click the button below...</p>
+              <a href="./a/articles.html">Read Article</a>
+            </div>
+            <div style="display: none;" class="article-self-div-keywords">philosophy, routine, photoes, clicks</div>
+          </div>
+
+
 
         </div>
       </div>
+
+
+
+
 
 
       <h1 class="in-main-heading" id="my-projects">PROJECTS</h1>
       <div class="main-projects">
         <div class="projects-outer-div">
 
-          <div class="project-self-div"><a href="."><div class="projects-num">12</div><h3>Personal site</h3>
+          <div class="project-self-div"><a href="."><div class="projects-num">12</div><h2>Personal site</h2>
             <div class="projects-lang">
               <div>html</div><div>css</div><div>javascript</div>
             </div></a></div>
 
-          <div class="project-self-div"><a href="./meritpoint"><div class="projects-num">11</div><h3>Merit calculators</h3>
+          <div class="project-self-div"><a href="./meritpoint"><div class="projects-num">11</div><h2>Merit calculators</h2>
             <div class="projects-lang">
               <div>html</div><div>css</div><div>javascript</div>
             </div></a></div>
 
-          <div class="project-self-div"><a href="./live-weather-pytanic"><div class="projects-num">10</div><h3>Weather site</h3>
+          <div class="project-self-div"><a href="./live-weather-pytanic"><div class="projects-num">10</div><h2>Weather site</h2>
             <div class="projects-lang">
               <div>html</div><div>css</div><div>javascript</div>
             </div></a></div>
 
-          <div class="project-self-div"><a href="https://github.com/Aasher-3689/max_square_in_matrix"><div class="projects-num">9</div><h3>Maximum square in matrix</h3>
+          <div class="project-self-div"><a href="https://github.com/Aasher-3689/max_square_in_matrix"><div class="projects-num">9</div><h2>Maximum square in matrix</h2>
             <div class="projects-lang">
               <div>python</div>
             </div></a></div>
 
-          <div class="project-self-div"><a href="./captcha"><div class="projects-num">8</div><h3>Algebric captcha</h3>
+          <div class="project-self-div"><a href="./captcha"><div class="projects-num">8</div><h2>Algebric captcha</h2>
             <div class="projects-lang">
               <div>html</div><div>css</div><div>javascript</div>
             </div></a></div>
 
-          <div class="project-self-div"><a href="./pytanic-linktree-html"><div class="projects-num">7</div><h3>Linktree in html</h3>
+          <div class="project-self-div"><a href="./pytanic-linktree-html"><div class="projects-num">7</div><h2>Linktree in html</h2>
             <div class="projects-lang">
               <div>html</div><div>css</div><div>javascript</div>
             </div></a></div>
 
-          <div class="project-self-div"><a href="https://github.com/Aasher-3689/linktree-python"><div class="projects-num">6</div><h3>Linktree in tkinter</h3>
+          <div class="project-self-div"><a href="https://github.com/Aasher-3689/linktree-python"><div class="projects-num">6</div><h2>Linktree in tkinter</h2>
             <div class="projects-lang">
               <div>python</div><div>tkinter</div>
             </div></a></div>
 
-          <div class="project-self-div"><a href="https://github.com/Aasher-3689/qr-code-generator"><div class="projects-num">5</div><h3>QR code generator</h3>
+          <div class="project-self-div"><a href="https://github.com/Aasher-3689/qr-code-generator"><div class="projects-num">5</div><h2>QR code generator</h2>
             <div class="projects-lang">
               <div>python</div><div>tkinter</div>
             </div></a></div>
 
-          <div class="project-self-div"><a href="https://github.com/Aasher-3689/Timer"><div class="projects-num">4</div><h3>Timer</h3>
+          <div class="project-self-div"><a href="https://github.com/Aasher-3689/Timer"><div class="projects-num">4</div><h2>Timer</h2>
             <div class="projects-lang">
               <div>python</div><div>tkinter</div>
             </div></a></div>
 
-          <div class="project-self-div"><a href="https://github.com/Aasher-3689/temperature-converter"><div class="projects-num">3</div><h3>Temperature converter</h3>
+          <div class="project-self-div"><a href="https://github.com/Aasher-3689/temperature-converter"><div class="projects-num">3</div><h2>Temperature converter</h2>
             <div class="projects-lang">
               <div>python</div><div>tkinter</div>
             </div></a></div>
 
-          <div class="project-self-div"><a href="https://github.com/Aasher-3689/Calculator"><div class="projects-num">2</div><h3>Calculator</h3>
+          <div class="project-self-div"><a href="https://github.com/Aasher-3689/Calculator"><div class="projects-num">2</div><h2>Calculator</h2>
             <div class="projects-lang">
               <div>python</div><div>tkinter</div>
             </div></a></div>
 
-          <div class="project-self-div"><a href="https://github.com/Aasher-3689/python_console_based_projectss"><div class="projects-num">1</div><h3>Python console projects</h3>
+          <div class="project-self-div"><a href="https://github.com/Aasher-3689/python_console_based_projectss"><div class="projects-num">1</div><h2>Python console projects</h2>
             <div class="projects-lang">
               <div>python</div>
             </div></a></div>
@@ -212,5 +350,182 @@
 
 
   <script src="./home.js"></script>
+
+  <script>
+
+    /* CODE FOR UPDATING ARTICLES ACCORDING TO CATEGORY SELECTED*/
+
+    const articleSelfDiv = document.querySelectorAll(".article-self-div");
+    const categoryWords = document.querySelectorAll(".category-word-category");
+    const sortWords = document.querySelectorAll(".category-word-sort");
+    const articlesOuterDiv = document.querySelector(".articles-outer-div");
+    const articleNotFound = document.querySelector(".article-not-found");
+    const searchInput = document.querySelector(".in-search-articles");
+    //making variable for current sort order to keep it updating
+    let activeSortOrder = "latest";
+    // tracking visible articles
+    let currentVisibleSelfDivs = [];
+    function updateCurrentVisibleSelfDivs() {
+      currentVisibleSelfDivs = getVisibleArticlesSelfDiv();
+    }
+    updateCurrentVisibleSelfDivs();
+
+
+
+
+
+
+    
+    // code for filter by category words
+
+    categoryWords.forEach((category) => {
+      category.addEventListener("click", () => {
+        searchInput.value = "";
+        searchInput.placeholder = `Search articles in ${category.textContent.toLowerCase()}`;
+        categoryWords.forEach((cat) => {cat.classList.remove("active-category-button")});
+        category.classList.add("active-category-button");
+        updateArticlesAccToCategoryWords(category.textContent.toLowerCase());
+      })
+    });
+
+    function updateArticlesAccToCategoryWords(c) {
+      let countSA = 0;
+      articleSelfDiv.forEach((article) => {
+        const articleDivCategories = article.getAttribute("data-category").split(",").map(c => c.trim().toLowerCase());
+        if (c === "all" || articleDivCategories.includes(c)) {
+          article.style.display = "flex";
+          countSA += 1;
+        } else {
+          article.style.display = "none";
+        }
+      });
+
+      if (countSA === 0) {
+        articleNotFound.innerHTML = `<h1>(^_^)</h1>
+                                     <p>No article found for &lsquo;${c}&rsquo;</p>`;
+        articleNotFound.style.display = "flex";
+        searchInput.disabled = true;
+      } else {
+        articleNotFound.style.display = "none";
+        searchInput.disabled = false;
+      }
+
+      updateCurrentVisibleSelfDivs();
+      updateArticlesSelfDivOrder(activeSortOrder);
+    }
+
+
+
+    
+
+
+
+
+    // code for arranging articles acc to sort word selected
+
+    sortWords.forEach((sortBy) => {
+      sortBy.addEventListener("click", () => {
+        searchInput.value = "";
+        articleNotFound.style.display = "none";
+        sortWords.forEach((sort) => {sort.classList.remove("active-category-button")});
+        sortBy.classList.add("active-category-button");
+        if (sortBy.textContent.trim().toLowerCase() == "oldest") {
+          activeSortOrder = "oldest";
+          updateArticlesSelfDivOrder(activeSortOrder);
+        } else {
+          activeSortOrder = "latest";
+          updateArticlesSelfDivOrder(activeSortOrder);
+        }
+      });
+    });
+
+    function getVisibleArticlesSelfDiv() {
+      return Array.from(articleSelfDiv).filter(a => window.getComputedStyle(a).display !== "none");
+    }
+
+    function getArticleID(a) {
+      return parseInt(a.getAttribute("data-id"));
+    }
+
+    function updateArticlesSelfDivOrder(s) {
+      const articlesToOrder = getVisibleArticlesSelfDiv();
+      if (s === "oldest") {
+        articlesToOrder.sort((firstCard, secondCard) => getArticleID(firstCard) - getArticleID(secondCard));
+      } else {
+        articlesToOrder.sort((firstCard, secondCard) => getArticleID(secondCard) - getArticleID(firstCard));
+      }
+
+      articlesToOrder.forEach(a => articlesOuterDiv.appendChild(a));
+    }
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+  <script>
+
+    /* CODE FOR UPDATING ARTICLES CARD ACC TO SEARCH TERMS */
+    const articleSelfDivArray = Array.from(document.querySelectorAll(".article-self-div"));
+    searchInput.addEventListener("input", () => {
+      updateArticlesAccToSearch((searchInput.value).toLowerCase().trim());
+    });
+
+    function updateArticlesAccToSearch(s) {
+
+      // keeping articles as was before search(keeping sort and category), if input gets empty
+
+      if (s === "") {
+        articleSelfDiv.forEach(a => a.remove());
+        currentVisibleSelfDivs.forEach(a => {articlesOuterDiv.appendChild(a)});
+        articleSelfDiv.forEach(a => a.removeAttribute("data-matches"));
+        articleNotFound.style.display = "none";
+        updateArticlesSelfDivOrder(activeSortOrder);
+
+      // if input not empty
+      } else {
+        const searchTerms = s.split(/\s+/).filter(Boolean);
+
+        // counting matches in each card to show best match at the top
+        articleSelfDivArray.forEach(a => {
+          const articleDivText = a.textContent.toLowerCase();
+          let matches = 0;
+          for (const term of searchTerms) {
+            if (articleDivText.includes(term)) {matches += 1;}
+          }
+          a.dataset.matches = String(matches);
+        });
+
+        //arranging articles according to best matches
+        articleSelfDivArray.sort((x, y) => y.getAttribute("data-matches") - x.getAttribute("data-matches"));
+
+
+        // updating article cards acc to search terms
+        articleSelfDiv.forEach(a => a.remove());
+        articleSelfDivArray.forEach(a => {
+          if (parseInt(a.getAttribute("data-matches")) > 0) {
+            articlesOuterDiv.appendChild(a);
+          }
+        });
+
+        const checkNoArticleFound = Array.from(document.querySelectorAll(".article-self-div")).filter(a => window.getComputedStyle(a).display !== "none");
+        if (checkNoArticleFound.length === 0) {
+          articleNotFound.innerHTML = `<h1>(^_^)</h1>
+                                       <p>No article found for &lsquo;${s}&rsquo; in selected category</p>`;
+          articleNotFound.style.display = "flex";
+        } else {
+          articleNotFound.style.display = "none";
+        }
+      }
+    }
+
+  </script>
+
 </body>
 </html>
