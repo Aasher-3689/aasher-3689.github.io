@@ -24,22 +24,22 @@
 
 @font-face {
   font-family: "1";
-  src: url("./assets/fonts/roboto.ttf") format("truetype");
+  src: url("/assets/fonts/roboto.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "2";
-  src: url("./assets/fonts/inter.ttf") format("truetype");
+  src: url("/assets/fonts/inter.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "3";
-  src: url("./assets/fonts/croissant-one.ttf") format("truetype");
+  src: url("/assets/fonts/croissant-one.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "noto serif";
-  src: url("./assets/fonts/noto-serif.ttf") format("truetype");
+  src: url("/assets/fonts/noto-serif.ttf") format("truetype");
 }
 
 body, html {
@@ -107,7 +107,7 @@ nav {
 }
 
 .header-desc-bg {
-  background-image: linear-gradient(#020c1fa6), url("./assets/images/bg-header-desc.jpg");
+  background-image: linear-gradient(#020c1fa6), url("/assets/images/bg-header-desc.jpg");
   background-repeat: no-repeat; background-size: cover; background-position: top;
   background-attachment: fixed;
   width: 100%; display: flex; justify-content: center; align-items: center;
@@ -188,7 +188,7 @@ nav {
 
 footer {
   background-color: rgb(36, 36, 35);
-  background-image: linear-gradient(#020c1fa6), url("./assets/images/bg-footer.jpg");
+  background-image: linear-gradient(#020c1fa6), url("/assets/images/bg-footer.jpg");
   background-repeat: no-repeat; background-size: cover; background-position: top;
   background-attachment: fixed;
   width: 100%;
@@ -432,7 +432,6 @@ main {
   background: #2e6f40; border-radius: 14px 14px 0 0;
   padding: 1.5rem;
   display: flex; flex-direction: column; row-gap: 1rem;
-  transition: background-color 0.3s ease-in-out;
   * {
     color: #FDFBD4;
   }
@@ -464,12 +463,6 @@ main {
     width: fit-content;
     color: #2e6f40;
     position: absolute; left: 1.5rem; bottom: 1.5rem;
-  }
-}
-
-.article-self-div:hover {
-  .article-self-div-top {
-    background-color: #275e37;
   }
 }
 
