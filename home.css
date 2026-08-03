@@ -234,7 +234,7 @@ footer * {
 .back-to-top {
   z-index: 99;
   display: none; justify-content: center; align-items: center;
-  position: fixed; bottom: 24px; right: 24px;
+  position: fixed; bottom: 19px; right: 70px;
   height: 36px; width: 36px;
   background-color: rgb(36, 36, 35);
   border-radius: 50%;
