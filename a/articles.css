@@ -106,3 +106,7 @@ article {
 .read-more-articles-link:hover {
     background-color: #275e37;
 }
+
+.back-to-top {
+  bottom: 24px; right: 24px;
+}
